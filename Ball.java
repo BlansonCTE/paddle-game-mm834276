@@ -14,15 +14,22 @@ public class Ball extends JPanel{
         int width = 300, height = 400;
 
         private void moveBall(){
-            if(x>width)
+            x = x+xd;
+            if(x>width-60){
             xd = -1;
-            if(y>height)
-            yd = -1;
-
-            x = x + xd;
-            y = y + yd;
-
+            }
+            else if(x<=0){
+                xd = +1;
+            }
             
+            y = y+yd;
+            if(y>height-60){
+            yd = -1;
+            }
+
+            else if(y<=0){
+                yd = +1;
+            } 
         }
     @Override
     public void paint(Graphics g){
